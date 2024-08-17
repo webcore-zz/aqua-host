@@ -24,7 +24,7 @@ npm run build --omit=dev
 echo "Clean up $deployUrl"
 rm -rf "$deployUrl/*"
 echo "Copy dist to $deployUrl"
-cp -r dist/aqua-host $deployUrl
+cp -r dist/aqua-host/ $deployUrl
 echo "Update nginx"
 cp nginx.conf $confUrl
 echo "Restart neginx"
