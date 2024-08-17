@@ -20,7 +20,7 @@ while true; do
 done
 
 echo "Running build..."
-npm run build --omit=dev
+ng build --configuration=production --verbose
 echo "Clean up $deployUrl"
 rm -rf "$deployUrl/*"
 echo "Copy dist to $deployUrl"
