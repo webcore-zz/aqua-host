@@ -46,14 +46,6 @@
             "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "src/assets",
-              {
-                "glob": "**/*",
-                "input": "public",
-                "output": "."
-              }
-            ],
             "styles": ["src/styles.scss"],
             "scripts": [],
             "main": "src/main.ts",
@@ -78,10 +70,19 @@
                 {
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "assets": [
+                "src/assets/",
+                {
+                  "glob": "**.*",
+                  "input": "src/manifest-prod/",
+                  "output": "/assets/."
                 },
                 {
-                  "replace": "src/assets/mf.manifest.json",
-                  "with": "src/assets/mf.manifest.prod.json"
+                  "glob": "**/*",
+                  "input": "public",
+                  "output": "."
                 }
               ],
               "outputHashing": "all",
@@ -90,7 +91,20 @@
             "development": {
               "optimization": false,
               "extractLicenses": false,
-              "sourceMap": true
+              "sourceMap": true,
+              "assets": [
+                "src/assets/",
+                {
+                  "glob": "**.*",
+                  "input": "src/manifest/",
+                  "output": "/assets/."
+                },
+                {
+                  "glob": "**/*",
+                  "input": "public",
+                  "output": "."
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
