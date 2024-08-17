@@ -80,8 +80,8 @@
                   "with": "src/environments/environment.prod.ts"
                 },
                 {
-                  "replace": "src/assets/manifest.json",
-                  "with": "src/environments/manifest.prod.json"
+                  "replace": "src/assets/mf.manifest.json",
+                  "with": "src/assets/mf.manifest.prod.json"
                 }
               ],
               "outputHashing": "all",
