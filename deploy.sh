@@ -22,7 +22,7 @@ done
 echo "Running build..."
 npm run build --omit=dev
 echo "Clean up $deployUrl"
-rm -rf "$deployUrl/*
+rm -rf "$deployUrl/*"
 echo "Copy dist to $deployUrl"
 cp -r dist/aqua-host $deployUrl
 echo "Update nginx"
