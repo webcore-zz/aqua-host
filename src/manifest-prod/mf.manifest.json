@@ -1,3 +1,3 @@
 {
-    "thermostat": "http://192.168.50.59/remoteEntry.js"
+  "thermostat": "thermostat/remoteEntry.js"
 }
