@@ -9,18 +9,33 @@ while true; do
     [Yy]*)
         echo "Prefroming npm install..."
         npm ci
+        echo "Running build..."
+        ng build --configuration=production --verbose
         break
         ;;
     [Nn]*)
         echo "Skipping npm install..."
+        while true; do
+            read -p "Do you wish to run new build? " xx
+            case $xx in
+            [Yy]*)
+                echo "Running build..."
+                ng build --configuration=production --verbose
+                break
+                ;;
+            [Nn]*)
+                echo "Skipping new build..."
+                break
+                ;;
+            *) echo "Please answer yes or no." ;;
+            esac
+        done
         break
         ;;
     *) echo "Please answer yes or no." ;;
     esac
 done
 
-echo "Running build..."
-ng build --configuration=production --verbose
 echo "Clean up $deployUrl"
 rm -rf "$deployUrl/*"
 echo "Copy dist to $deployUrl"
